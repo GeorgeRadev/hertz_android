@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="org.hertz.FragmentSettings">
+
+    <TextView
+        android:id="@+id/durationText"
+        style="@style/TextAppearance.AppCompat.SearchResult.Title"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:text="Duration of frequency: " />
+
+    <SeekBar
+        android:id="@+id/duration"
+        android:layout_width="match_parent"
+        android:max="600"
+        android:min="5"
+        android:padding="8dp"
+        android:progress="180" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#469540"
+        android:backgroundTint="#FFFFFF"
+        android:text="Download latest Frequencies" />
+
+
+    <TextView
+        android:id="@+id/downloadStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="dfsdfdsf:" />
+</GridLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F6FA"
+    android:orientation="vertical"
+    tools:context="org.hertz.SequenceEdit">
+
+    <TextView
+        android:id="@+id/sequenceName"
+        style="@style/TextAppearance.AppCompat.SearchResult.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="Name:" />
+
+    <EditText
+        android:id="@+id/sequenceNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="none"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:maxLines="2"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/sequenceDescription"
+        style="@style/TextAppearance.AppCompat.SearchResult.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="Description:" />
+
+    <EditText
+        android:id="@+id/sequenceDescriptionEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="none"
+        android:inputType="textMultiLine"
+        android:maxLines="6"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:minLines="1"
+        android:text="" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Frequencies:" />
+
+    <EditText
+        android:id="@+id/frequenciesTextEdit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#FFFFFF"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:minLines="1"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

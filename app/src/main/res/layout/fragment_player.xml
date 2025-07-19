@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.hertz.FragmentPlayer">
+
+    <LinearLayout
+        android:id="@+id/topSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F1F6FA"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/playerName"
+            style="@style/TextAppearance.AppCompat.SearchResult.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SequenceName" />
+
+        <TextView
+            android:id="@+id/playerNumber"
+            style="@style/TextAppearance.AppCompat.SearchResult.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp"
+            android:text="SequenceNumber" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:text="frequency time:" />
+
+            <TextView
+                android:id="@+id/frequencyTime"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/frequencyRemainingTime"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="- 00:00" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:text="total time:" />
+
+            <TextView
+                android:id="@+id/totalTime"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/totalRemainingTime"
+                android:layout_height="match_parent"
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="- 00:00" />
+
+        </GridLayout>
+
+        <ProgressBar
+            android:id="@+id/playerProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="4"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/prev"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/player_prev"
+                    android:contentDescription="previous" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/stop"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/player_stop"
+                    android:contentDescription="stop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/play_pause"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/player_play"
+                    android:contentDescription="play" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/next"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/player_next"
+                    android:contentDescription="next" />
+            </LinearLayout>
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/playerDescription"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="sequence Description" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/frequenciesList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:background="#FFFFFF"
+        android:fastScrollEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topSection" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

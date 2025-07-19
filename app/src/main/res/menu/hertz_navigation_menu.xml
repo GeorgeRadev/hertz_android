@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/favorites"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/sequences"
+        android:icon="@drawable/sequences"
+        android:title="Sequences" />
+    <item
+        android:id="@+id/player"
+        android:icon="@drawable/player_play"
+        android:title="Player" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        android:title="Settings" />
+</menu>
