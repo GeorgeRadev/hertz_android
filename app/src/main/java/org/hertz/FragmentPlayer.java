@@ -49,7 +49,7 @@ public class FragmentPlayer extends Fragment implements View.OnClickListener {
     private TextView totalRemainingTime;
 
     private ListView frequenciesList;
-    private ArrayAdapter frequenciesAdapter;
+    private StringAdapter frequenciesAdapter;
 
     private ImageButton prevButton;
     private ImageButton stopButton;
@@ -69,8 +69,9 @@ public class FragmentPlayer extends Fragment implements View.OnClickListener {
         totalRemainingTime = (TextView) view.findViewById(R.id.totalRemainingTime);
 
         frequenciesAdapter = new StringAdapter(getActivity(), R.layout.fragment_string_row);
-        frequenciesList = (ListView) view.findViewById(R.id.frequenciesList);
+        frequenciesList = (ListView) view.findViewById(R.id.playerList);
         frequenciesList.setAdapter(frequenciesAdapter);
+        frequenciesList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
         prevButton = (ImageButton) view.findViewById(R.id.prev);
         prevButton.setOnClickListener(this);
@@ -120,7 +121,9 @@ public class FragmentPlayer extends Fragment implements View.OnClickListener {
             List<String> list = playingSequence.frequenciesList;
             playerNumber.setText(list.get(currentFrequency) + "Hz (" + (currentFrequency + 1) + " / " + list.size() + ")");
             playerDescription.setText(playingSequence.description);
-            frequenciesAdapter.clear();
+            frequenciesList.setItemChecked(currentFrequency, true);
+            frequenciesAdapter.selection = currentFrequency;
+
 
             frequencyTime.setText(Sequence.formatSeconds(SequencePlayerService.getCurrentSequenceTime()));
             frequencyRemainingTime.setText("- " + Sequence.formatSeconds(SequencePlayerService.getCurrentRemainingTime()));
@@ -138,6 +141,7 @@ public class FragmentPlayer extends Fragment implements View.OnClickListener {
             totalTime.setText(t);
             totalRemainingTime.setText("- " + t);
 
+            frequenciesAdapter.clear();
         }
     }
 

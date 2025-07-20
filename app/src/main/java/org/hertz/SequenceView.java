@@ -35,6 +35,7 @@ public class SequenceView extends AppCompatActivity implements View.OnClickListe
             sequenceDescription.setText(sequence.description);
 
             StringAdapter frequenciesAdapter = new StringAdapter(this, R.layout.fragment_string_row);
+            frequenciesAdapter.selection = -1;
             ListView frequenciesList = (ListView) findViewById(R.id.frequenciesList);
             frequenciesList.setAdapter(frequenciesAdapter);
             frequenciesAdapter.clear();
