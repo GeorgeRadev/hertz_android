@@ -48,7 +48,7 @@ public class FragmentSequences extends Fragment implements
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Sequence sequence = SequencesManager.sequences.get(position);
+        Sequence sequence = adapter.getItem(position);
         SequencesManager.setSequenceView(sequence);
         Intent intent = new Intent(getActivity(), SequenceView.class);
         startActivity(intent);
