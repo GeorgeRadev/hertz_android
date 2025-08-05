@@ -241,7 +241,8 @@ public class SequencePlayerService extends Service {
                     + "  - total time";
         }
 
-        NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, NotificationManager.IMPORTANCE_LOW);
+        notificationChannel.setSound(null,null);
         notificationManager.createNotificationChannel(notificationChannel);
         Notification.Builder notificationBuilder = new Notification.Builder(thiz, CHANNEL_ID)
                 .setContentTitle(title)
